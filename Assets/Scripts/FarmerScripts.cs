@@ -17,10 +17,7 @@ public class FarmerScripts : MonoBehaviour
     {
         Farmer = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
-<<<<<<< Updated upstream
-        
-=======
->>>>>>> Stashed changes
+
     }
 
     // Update is called once per frame
