@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI gameOverText;
@@ -21,7 +20,6 @@ public class GameManager : MonoBehaviour
     {
         
     }
-<<<<<<< Updated upstream
     public void GameOver()
     {
         gameOverText.gameObject.SetActive(true);
@@ -32,7 +30,5 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-=======
->>>>>>> Stashed changes
 
 }
