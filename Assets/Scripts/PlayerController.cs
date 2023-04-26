@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     private float speed = 6.0f;
     private float zBound = 16;
+    public float jumpForce = 5.0f;
+
+    private bool isGrounded = true;
     private Rigidbody playerRb;
 
     // Start is called before the first frame update
@@ -21,6 +24,13 @@ public class PlayerController : MonoBehaviour
         ConstrainPlayerPosition(); 
 
         //if (transform.position.z > transform.position.z)
+
+    // The Player Jump
+    if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
     }
 
     // Moves the player based on arrow key input
