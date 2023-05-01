@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< HEAD
     private float speed = 4.0f;
@@ -18,6 +19,9 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = true;
 >>>>>>> bfc6d2867e97ce015a1547774638abd7bb911374
+    private float speed = 4.0f;
+    private float zBound = 7;
+>>>>>>> parent of 96216f8 (Update PlayerController.cs)
     private Rigidbody playerRb;
 
     // Start is called before the first frame update
@@ -33,13 +37,6 @@ public class PlayerController : MonoBehaviour
         ConstrainPlayerPosition(); 
 
         //if (transform.position.z > transform.position.z)
-
-    // The Player Jump
-    if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-        {
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-        }
     }
 
     // Moves the player based on arrow key input
