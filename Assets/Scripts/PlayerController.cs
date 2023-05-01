@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = true;
 >>>>>>> bfc6d2867e97ce015a1547774638abd7bb911374
+=======
     private float speed = 4.0f;
     private float zBound = 7;
 >>>>>>> parent of 96216f8 (Update PlayerController.cs)
