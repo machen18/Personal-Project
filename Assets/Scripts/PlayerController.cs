@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-    private float speed = 4.0f;
-    private float zBound = 7;
-=======
-    private float speed = 6.0f;
-=======
-    private float speed = 8.0f;
->>>>>>> Stashed changes
-    private float zBound = 16;
+    private float speed = 8f;
+    private float zBound = 16f;
     public float jumpForce = 5.0f;
 
     private bool isGrounded = true;
->>>>>>> bfc6d2867e97ce015a1547774638abd7bb911374
     private Rigidbody playerRb;
 
     // Start is called before the first frame update
