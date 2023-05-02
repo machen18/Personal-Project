@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private float speed = 8f;
-    private float zBound = 16f;
+    private float xBound = 7.5f;
     public float jumpForce = 5.0f;
 
     private bool isGrounded = true;
@@ -36,24 +36,30 @@ public class PlayerController : MonoBehaviour
     // Moves the player based on arrow key input
 void MovePlayer()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        //float horizontalInput = Input.GetAxis("Horizontal");
         //float verticalInput = Input.GetAxis("Vertical");
 
         //playerRb.AddForce(Vector3.forward * speed * verticalInput);
-        playerRb.AddForce(Vector3.right * speed * horizontalInput);
+        //playerRb.AddForce(Vector3.right * speed * horizontalInput);
+        if (Input.GetKey(KeyCode.A)) {
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D)) {
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
     }
 
     //Prevent the player from leaving the top + bottom of screen
     void ConstrainPlayerPosition()
     {
-        if (transform.position.z < -zBound)
+        if (transform.position.x < -xBound)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
+            transform.position = new Vector3(-xBound, transform.position.y, transform.position.z);
         }
 
-        if (transform.position.z > zBound)
+        if (transform.position.x > xBound)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
+            transform.position = new Vector3(xBound, transform.position.y, transform.position.z);
         }
     }
 

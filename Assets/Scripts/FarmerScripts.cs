@@ -12,7 +12,7 @@ public class FarmerScripts : MonoBehaviour
     void Start()
     {
         Farmer = GetComponent<Rigidbody>();
-        player = GameObject.Find("Player");
+        //player = GameObject.Find("Player");
 
     }
 
