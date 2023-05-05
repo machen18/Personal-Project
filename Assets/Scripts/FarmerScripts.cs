@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class FarmerScripts : MonoBehaviour
 {
-<<<<<<< Updated upstream
     public float speed = 2.5f;
-=======
-    public float speed;
->>>>>>> Stashed changes
     private Rigidbody Farmer;
     private GameObject player;
 
@@ -17,10 +13,7 @@ public class FarmerScripts : MonoBehaviour
     {
         Farmer = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
-<<<<<<< Updated upstream
-        
-=======
->>>>>>> Stashed changes
+
     }
 
     // Update is called once per frame
