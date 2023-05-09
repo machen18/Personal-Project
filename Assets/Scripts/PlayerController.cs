@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 2.5f;
-    private float zBound = 5.0f;
-
-
+    private float speed = 5.0f;
+    private float xRange = 20.0f;
     private bool isGrounded = true;
-
     private Rigidbody playerRb;
 
+    public float horizontalInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,14 +38,14 @@ void MovePlayer()
     //Prevent the player from leaving the top + bottom of screen
     void ConstrainPlayerPosition()
     {
-        if (transform.position.z < -zBound)
+        if (transform.position.x < -xRange)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
 
-        if (transform.position.z > zBound)
+        if (transform.position.x > xRange)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
     }
 
