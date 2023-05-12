@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 5.0f;
-    private float xRange = 20.0f;
+    private float speed = 8f;
+    private float xBound = 7.5f;
+    public float jumpForce = 5.0f;
+
     private bool isGrounded = true;
     private Rigidbody playerRb;
 
-    public float horizontalInput;
-    public float jumpForce = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,44 +23,43 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         ConstrainPlayerPosition(); 
 
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        //if (transform.position.z > transform.position.z)
+
+    // The Player Jump
+    if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
-
-      void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-
-        //if (transform.position.z > transform.position.z)
     }
 
     // Moves the player based on arrow key input
 void MovePlayer()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        //float horizontalInput = Input.GetAxis("Horizontal");
         //float verticalInput = Input.GetAxis("Vertical");
 
         //playerRb.AddForce(Vector3.forward * speed * verticalInput);
-        playerRb.AddForce(Vector3.right * speed * horizontalInput);
+        //playerRb.AddForce(Vector3.right * speed * horizontalInput);
+        if (Input.GetKey(KeyCode.A)) {
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D)) {
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
     }
 
     //Prevent the player from leaving the top + bottom of screen
     void ConstrainPlayerPosition()
     {
-        if (transform.position.x < -xRange)
+        if (transform.position.x < -xBound)
         {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-xBound, transform.position.y, transform.position.z);
         }
 
-        if (transform.position.x > xRange)
+        if (transform.position.x > xBound)
         {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+            transform.position = new Vector3(xBound, transform.position.y, transform.position.z);
         }
     }
 
