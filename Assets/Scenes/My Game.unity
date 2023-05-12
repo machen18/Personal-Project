@@ -1291,6 +1291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 455117599}
   - component: {fileID: 455117600}
+  - component: {fileID: 455117601}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1327,6 +1328,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 279779929}
   restartButton: {fileID: 566543705}
+--- !u!114 &455117601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455117598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc582bcd5ce845f9aaf01bb72e07f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1875038427}
+  accelerationRate: 5
+  maxSpeed: 5
 --- !u!1001 &458034114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4989,8 +5005,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
-  accelerationRate: 2
-  maxSpeed: 2
 --- !u!54 &1875038429
 Rigidbody:
   m_ObjectHideFlags: 0
