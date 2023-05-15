@@ -8,12 +8,10 @@ public class PlayerController : MonoBehaviour
     private float xBound = 7.5f;
     public float jumpForce = 5.0f;
     
-    public float accelerationRate;
-    public float maxSpeed;
 
     private bool isGrounded = true;
     private Rigidbody playerRb;
-    private float currentSpeed;
+    
 
 
     // Start is called before the first frame update
@@ -22,7 +20,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
     
 
-        currentSpeed = 0f;
+       
     }
 
     // Update is called once per frame
@@ -41,9 +39,6 @@ public class PlayerController : MonoBehaviour
         }
         
 
-        currentSpeed += accelerationRate * Time.deltaTime;
-        currentSpeed = Mathf.Min(currentSpeed, maxSpeed);
-        transform.position += new Vector3(currentSpeed * Time.deltaTime, 0f, 0f);
     }
 
     // Moves the player based on arrow key input
