@@ -1462,9 +1462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc582bcd5ce845f9aaf01bb72e07f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Perfabs:
+  - {fileID: 3748989286040338424, guid: beb0d20af4bad4a2395cd084f02801f5, type: 3}
+  - {fileID: 8465405572329653377, guid: 6a22a7ec95047470db5816eba72d0cd5, type: 3}
+  - {fileID: 4863321047855336391, guid: aeef6f92788f04c99a7b759f32484570, type: 3}
   player: {fileID: 1875038427}
-  accelerationRate: 5
-  maxSpeed: 5
 --- !u!1001 &458034114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4970,6 +4972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
+  accelerationRate: 0
+  maxSpeed: 0
 --- !u!54 &1875038429
 Rigidbody:
   m_ObjectHideFlags: 0
