@@ -1509,7 +1509,7 @@ MonoBehaviour:
   gameOverText: {fileID: 279779929}
   restartButton: {fileID: 566543705}
   startButton: {fileID: 57888282}
-  hideObject: {fileID: 1031376922}
+  Title: {fileID: 1031376922}
 --- !u!114 &455117601
 MonoBehaviour:
   m_ObjectHideFlags: 0

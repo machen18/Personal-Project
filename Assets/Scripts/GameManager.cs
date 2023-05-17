@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public Button restartButton;
     public Button startButton; 
-    public GameObject hideObject;
+    public GameObject Title;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
        void StartGame()
     {
         Debug.Log("start");
-        hideObject.SetActive(false);
+        Title.SetActive(false);
         
     }
 
