@@ -8,12 +8,14 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI gameOver;
     public Button restartButton;
     public Button startButton; 
     public GameObject hideObject;
+    public GameObject titleScreen;
+    public bool isGameActive;
 
-    // Start is called before the first frame update
+    Start is called before the first frame update
     void Start()
     {
        startButton.onClick.AddListener(StartGame);
@@ -27,15 +29,17 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    Update is called once per frame
     void Update()
     {
         
     }
+
     public void GameOver()
     {
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
+        isGameActive = false;
     }
     
     public void RestartGame()
@@ -43,4 +47,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public void StartGame
+    {
+        isGameActive = true;
+
+        //titleScreen.gameObject.SetActive(false);
+    }
 }
